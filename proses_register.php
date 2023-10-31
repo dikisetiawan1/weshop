@@ -12,8 +12,8 @@ $nama_lengkap = $_POST['nama'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $alamat = $_POST['alamat'];
-$password = $_POST['password'];
-$re_password = $_POST['re_password'];
+$password = md5($_POST['password']);
+$re_password = md5($_POST['re_password']);
 
 // menghilangkan isi dari input paassword yg akan di tampilkan di link URL
 unset($_POST['password']);

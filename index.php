@@ -1,8 +1,14 @@
 <?php
 
+session_start();
+
 include_once 'function/helper.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : false;
+
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
+$nama = isset($_SESSION['nama']) ? $_SESSION['nama'] : false;
+$level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
 
 ?>
 
@@ -24,8 +30,20 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
         </a>
         <div id="menu">
             <div id="user">
-                <a href="<?= BASE_URL . "index.php?page=login"; ?>">Login</a>
-                <a href="<?= BASE_URL . "index.php?page=register"; ?>">Register</a>
+                <?php
+                if ($user_id) {
+                    echo "hi <b>$nama</b>, 
+                    <a href='" . BASE_URL . "index.php?page=My_profile&module=pesanan&action=list'> My Profile </a>
+                    <a href='" . BASE_URL . "logout.php'>Logout</a>
+                    ";
+                } else {
+
+                    echo "<a href='" . BASE_URL . "index.php?page=login'>Login</a>
+                    <a href='" . BASE_URL . "index.php?page=register'>Register</a>";
+                }
+
+
+                ?>
             </div>
             <a href="<?= BASE_URL . "index.php?page=keranjang"; ?>" id="button-keranjang">
 
