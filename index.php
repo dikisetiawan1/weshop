@@ -2,6 +2,7 @@
 
 session_start();
 
+include_once 'function/koneksi.php';
 include_once 'function/helper.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : false;
@@ -37,25 +38,19 @@ $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
                     <a href='" . BASE_URL . "logout.php'>Logout</a>
                     ";
                 } else {
-
                     echo "<a href='" . BASE_URL . "index.php?page=login'>Login</a>
                     <a href='" . BASE_URL . "index.php?page=register'>Register</a>";
                 }
-
-
                 ?>
             </div>
             <a href="<?= BASE_URL . "index.php?page=keranjang"; ?>" id="button-keranjang">
-
                 <img src="<?= BASE_URL . "images/cart.png"; ?>" alt="cart">
-
             </a>
         </div>
     </div>
     <div id="content">
 
         <?php
-
         $filename = "$page.php";
 
         if (file_exists($filename)) {
