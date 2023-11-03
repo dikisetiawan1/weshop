@@ -144,6 +144,39 @@ body {
     background-color: orange;
 }
 
+.table-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-list tr .baris-title {
+    background-color: #E6E6E6;
+}
+
+.table-list tr th,
+.table-list tr td {
+    padding: 10px 7px;
+}
+
+.kolom-nomor {
+    width: 20px;
+    text-align: center;
+}
+
+.tengah {
+    text-align: center;
+}
+
+.kiri {
+    text-align: center;
+}
+
+.kanan {
+    text-align: center;
+}
+
+
+
 #frame-tambah a {
     background-color: #1e5474;
     color: white;
