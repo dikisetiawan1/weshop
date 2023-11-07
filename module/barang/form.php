@@ -3,20 +3,31 @@
 $barang_id = isset($_GET['barang_id']) ? $_GET['barang_id'] : false;
 
 $nama_barang = "";
+$kategori_id = "";
+$gambar = "";
 $stok = "";
 $harga = "";
 $spesifikasi = "";
 $status = "";
 $button = "Add";
+$keteranganGambar = "";
 
-// if ($barang_id) {
-//     $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori WHERE kategori_id='$kategori_id'");
+if ($barang_id) {
+    $queryKategori = mysqli_query($koneksi, "SELECT * FROM barang WHERE barang_id='$barang_id'");
 
-//     $row = mysqli_fetch_assoc($queryKategori);
-//     $kategori = $row['kategori'];
-//     $status = $row['status'];
-//     $button = "Update";
-// }
+    $row = mysqli_fetch_assoc($queryKategori);
+    $nama_barang = $row['nama_barang'];
+    $kategori_id = $row['kategori_id'];
+    $spesifikasi = $row['spesifikasi'];
+    $gambar = $row['gambar'];
+    $harga = $row['harga'];
+    $stok = $row['stok'];
+    $status = $row['status'];
+    $button = "Update";
+
+    $keteranganGambar = "(Silahkan klik tombol dibawah ini jika ingin ubah gambar)";
+    $img = "<img src='" . BASE_URL . "images/barang/$gambar' style='width:200px;vertical-align:middle;'/>";
+}
 
 
 ?>
@@ -29,7 +40,12 @@ $button = "Add";
                 <?php
                 $query = mysqli_query($koneksi, "SELECT kategori_id, kategori FROM kategori WHERE status='on'");
                 while ($row =  mysqli_fetch_assoc($query)) {
-                    echo "<option value='$row[kategori_id]'>$row[kategori]</option>";
+                    if ($kategori_id == $row['kategori_id']) {
+                        echo "<option value='$row[kategori_id]' selected='true'>$row[kategori]</option>";
+                    } else {
+
+                        echo "<option value='$row[kategori_id]'>$row[kategori]</option>";
+                    }
                 }
                 ?>
             </select>
@@ -54,8 +70,11 @@ $button = "Add";
         <span><input type="text" name="harga" value="<?php echo $harga; ?>" /></span>
     </div>
     <div class="element-form">
-        <label for="file">Upload Gambar</label>
-        <span><input type="file" name="file" /></span>
+        <label for="file">Upload Gambar <?php echo $keteranganGambar; ?></label>
+        <span>
+            <input type="file" name="file" />
+            <?php echo $img; ?>
+        </span>
     </div>
 
     <div class="element-form">
