@@ -26,11 +26,14 @@ if ($barang_id) {
     $button = "Update";
 
     $keteranganGambar = "(Silahkan klik tombol dibawah ini jika ingin ubah gambar)";
-    $img = "<img src='" . BASE_URL . "images/barang/$gambar' style='width:200px;vertical-align:middle;'/>";
+    $gambar = "<img src='" . BASE_URL . "images/barang/$gambar' style='width:200px;vertical-align:middle;'/>";
 }
 
 
 ?>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+
 
 <form action="<?php echo BASE_URL . "module/barang/action.php?barang_id=$barang_id"; ?>" method="POST" enctype="multipart/form-data">
     <div class="element-form">
@@ -58,7 +61,9 @@ if ($barang_id) {
     </div>
     <div class="element-form">
         <label for="spesifikasi">Spesifikasi</label>
-        <span><textarea name="spesifikasi"><?php echo $spesifikasi; ?></textarea></span>
+        <div class="element-form">
+            <span><textarea name="spesifikasi" id="editor"><?php echo $spesifikasi; ?></textarea></span>
+        </div>
     </div>
 
     <div class="element-form">
@@ -73,7 +78,7 @@ if ($barang_id) {
         <label for="file">Upload Gambar <?php echo $keteranganGambar; ?></label>
         <span>
             <input type="file" name="file" />
-            <?php echo $img; ?>
+            <?php echo $gambar; ?>
         </span>
     </div>
 
@@ -93,11 +98,12 @@ if ($barang_id) {
         <span><input type="submit" name="button" value="<?php echo $button; ?>" /></span>
     </div>
 
-
-
-
-
-
-
-
 </form>
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
