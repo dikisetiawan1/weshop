@@ -23,10 +23,23 @@ $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weshop</title>
 
-    <link rel="stylesheet" href="<?php echo BASE_URL . "css/style.css?v1"; ?>" type="text/css" />
+    <link rel="stylesheet" href="<?php echo BASE_URL . "css/style.css?v2"; ?>" type="text/css" />
+    <link rel="stylesheet" href="<?php echo BASE_URL . "css/banner.css?v2"; ?>" type="text/css" />
 
-    <script src="<?php echo BASE_URL . "js/jquery-3.7.1.min.js"; ?>"></script>
-    <script src="<?php echo BASE_URL . "js/Slides-SlidesJS-3/jquery.slides.min.js"; ?>"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src=" <?php echo BASE_URL . "js/Slides-SlidesJS-3/source/jquery.slides.min.js"; ?>"></script>
+    <script>
+        $(function() {
+            $('#slides').slidesjs({
+                height: 350,
+                play: {
+                    auto: true,
+                    interval: 3000
+                },
+                navigation: false
+            });
+        });
+    </script>
 </head>
 <div id="container">
     <div id="header">

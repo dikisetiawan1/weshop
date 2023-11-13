@@ -140,7 +140,7 @@ body {
     float: left;
 }
 
-.active {
+#class_a.active {
     background-color: orange;
 }
 

@@ -20,27 +20,27 @@ if ($user_id) {
                 <li>
                     <a <?php if ($module == "kategori") {
                             echo "class='active'";
-                        } ?> href="<?php echo BASE_URL . "index.php?page=My_profile&module=kategori&action=list"; ?>">Kategori</a>
+                        } ?> href="<?php echo BASE_URL . "index.php?page=My_profile&module=kategori&action=list"; ?>" id="class_a">Kategori</a>
                 </li>
                 <li>
                     <a <?php if ($module == "barang") {
                             echo "class='active'";
-                        } ?> href="<?php echo BASE_URL . "index.php?page=My_profile&module=barang&action=list"; ?>">Barang</a>
+                        } ?> href="<?php echo BASE_URL . "index.php?page=My_profile&module=barang&action=list"; ?>" id="class_a">Barang</a>
                 </li>
                 <li>
                     <a <?php if ($module == "kota") {
                             echo "class='active'";
-                        } ?> href="<?php echo BASE_URL . "index.php?page=My_profile&module=kota&action=list"; ?>">Kota</a>
+                        } ?> href="<?php echo BASE_URL . "index.php?page=My_profile&module=kota&action=list"; ?>" id="class_a">Kota</a>
                 </li>
                 <li>
                     <a <?php if ($module == "user") {
                             echo "class='active'";
-                        } ?> href="<?php echo BASE_URL . "index.php?page=My_profile&module=user&action=list"; ?>">User</a>
+                        } ?> href="<?php echo BASE_URL . "index.php?page=My_profile&module=user&action=list"; ?>" id="class_a">User</a>
                 </li>
                 <li>
                     <a <?php if ($module == "banner") {
                             echo "class='active'";
-                        } ?> href="<?php echo BASE_URL . "index.php?page=My_profile&module=banner&action=list"; ?>">Banner</a>
+                        } ?> href="<?php echo BASE_URL . "index.php?page=My_profile&module=banner&action=list"; ?>" id="class_a">Banner</a>
                 </li>
 
             <?php
