@@ -6,6 +6,7 @@ include_once 'function/koneksi.php';
 include_once 'function/helper.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : false;
+$kategori_id = isset($_GET['kategori_id']) ? $_GET['kategori_id'] : false;
 
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
 $nama = isset($_SESSION['nama']) ? $_SESSION['nama'] : false;
@@ -22,7 +23,10 @@ $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weshop</title>
 
-    <link rel="stylesheet" href="<?= BASE_URL . "css/style.css"; ?>" type="text/css" />
+    <link rel="stylesheet" href="<?php echo BASE_URL . "css/style.css?v1"; ?>" type="text/css" />
+
+    <script src="<?php echo BASE_URL . "js/jquery-3.7.1.min.js"; ?>"></script>
+    <script src="<?php echo BASE_URL . "js/Slides-SlidesJS-3/jquery.slides.min.js"; ?>"></script>
 </head>
 <div id="container">
     <div id="header">
@@ -56,7 +60,8 @@ $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
         if (file_exists($filename)) {
             include_once($filename);
         } else {
-            echo "maaf, halaman ini tidak tersedia";
+
+            include_once("main.php");
         }
         ?>
 
