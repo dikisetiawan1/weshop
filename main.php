@@ -51,7 +51,7 @@
                 </div>
 
                 <div class='button-add-cart'>
-                <a href='" . BASE_URL . "tambah_keranjang?barang_id=$row[barang_id]'>+ add to cart</a>
+                <a href='" . BASE_URL . "tambah_keranjang.php?barang_id=$row[barang_id]'>+ add to cart</a>
                 </div>
                 </li>";
                 $no++;

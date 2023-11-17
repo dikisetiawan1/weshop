@@ -11,6 +11,8 @@ $kategori_id = isset($_GET['kategori_id']) ? $_GET['kategori_id'] : false;
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
 $nama = isset($_SESSION['nama']) ? $_SESSION['nama'] : false;
 $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
+$keranjang = isset($_SESSION['keranjang']) ? $_SESSION['keranjang'] : false;
+$totalBarang = count($keranjang);
 
 ?>
 
@@ -23,7 +25,7 @@ $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weshop</title>
 
-    <link rel="stylesheet" href="<?php echo BASE_URL . "css/style.css?v5"; ?>" type="text/css" />
+    <link rel="stylesheet" href="<?php echo BASE_URL . "css/style.css?v10"; ?>" type="text/css" />
     <link rel="stylesheet" href="<?php echo BASE_URL . "css/banner.css?v2"; ?>" type="text/css" />
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -62,6 +64,11 @@ $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
             </div>
             <a href="<?= BASE_URL . "index.php?page=keranjang"; ?>" id="button-keranjang">
                 <img src="<?= BASE_URL . "images/cart.png"; ?>" alt="cart">
+                <?php
+                if ($totalBarang != 0) {
+                    echo "<span class='total-barang'>" . $totalBarang . "</span>";
+                }
+                ?>
             </a>
         </div>
     </div>
