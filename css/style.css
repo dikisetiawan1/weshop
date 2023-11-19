@@ -88,7 +88,7 @@ a {
 .element-form span textarea,
 .element-form span select {
     width: 100%;
-    height: auto;
+    height: 24px;
 }
 
 .element-form span input[type="submit"] {
@@ -165,6 +165,7 @@ a {
 .table-list tr th,
 .table-list tr td {
     padding: 10px 7px;
+
 }
 
 .kolom-nomor {
@@ -177,11 +178,11 @@ a {
 }
 
 .kiri {
-    text-align: center;
+    text-align: left;
 }
 
 .kanan {
-    text-align: center;
+    text-align: right;
 }
 
 
@@ -393,4 +394,32 @@ a {
 
 #lanjut-pemesanan {
     float: right;
+}
+
+#frame-data-pengiriman {
+    float: left;
+    width: 500px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+#frame-data-detail {
+    float: left;
+    width: 560px;
+}
+
+#frame-detail-order {
+    border: 1px solid grey;
+    padding: 25px;
+}
+
+#frame-form-pengiriman {
+    border: 1px solid grey;
+    padding: 25px;
+}
+
+h3.label-data-pengiriman {
+    border: 1px solid grey;
+    padding: 10px 7px;
+    margin: 0px;
 }

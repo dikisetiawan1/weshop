@@ -1,3 +1,11 @@
+<?php
+if ($user_id == false) {
+    $_SESSION["proses_pesanan"] = true;
+    header("location:" . BASE_URL . "index.php?page=login");
+    exit;
+}
+?>
+
 <div id="frame-data-pengiriman">
     <h3>Alamat Pengiriman Barang</h3>
     <div id="frame-form-pengiriman">
@@ -12,8 +20,9 @@
                 <span><input type="text" name="nomor_telepon" id=""></span>
             </div>
             <div class="element-form">
-                <label for="">Alamat Pengiriman</label>
-                <span><textarea name="alamat" id=""></textarea></span>
+                <label for="alamat">Alamat</label>
+                <span><textarea name="alamat"></textarea></span>
+
             </div>
             <div class="element-form">
                 <label for="">Kota</label>
@@ -23,7 +32,7 @@
 
                         $query = mysqli_query($koneksi, "SELECT * FROM kota");
                         while ($row = mysqli_fetch_assoc($query)) {
-                            echo "<option value='$row[koda_id]'>$row[kota]</option>";
+                            echo "<option value='$row[kota_id]'>$row[kota] (" . rupiah($row['tarif']) . ")</option>";
                         }
                         ?>
                     </select>
@@ -71,23 +80,15 @@
                 echo "
                 <tr>
                     <td class='kiri'>$nama_barang</td>
-                    <td class='tengah'>$quantity</td>
+                    <td class='kanan'>$quantity</td>
                     <td class='kanan'>" . rupiah($total) . "</td>
                 </tr> ";
             }
             echo "<tr>
-            <td colspan='2'></td>
-            <td class='kanan'><b>Sub Total</b></td>
+            
+            <td colspan='2' class='kanan'><b>Sub Total</b></td>
             <td class='kanan'><b>" . rupiah($subtotal) . "</b></td>
             </tr>";
-
-
-
-
-
-
-
-
 
             ?>
 

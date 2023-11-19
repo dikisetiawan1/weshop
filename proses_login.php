@@ -23,6 +23,12 @@ if (mysqli_num_rows($query) == 0) {
     $_SESSION['user_id'] = $row['user_id'];
     $_SESSION['nama'] = $row['nama'];
     $_SESSION['level'] = $row['level'];
+    $_SESSION['proses_pesanan'];
 
-    header("location:" . BASE_URL . "index.php?page=My_profile&module=pesanan&action=list");
+    if (isset($_SESSION['proses_pesanan'])) {
+        header("location:" . BASE_URL . "index.php?page=data_pemesan");
+    } else {
+
+        header("location:" . BASE_URL . "index.php?page=My_profile&module=pesanan&action=list");
+    }
 }
