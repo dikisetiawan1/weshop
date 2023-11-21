@@ -50,7 +50,7 @@ if ($user_id) {
             <li>
                 <a <?php if ($module == "pesanan") {
                         echo "class='active'";
-                    } ?> href="<?php echo BASE_URL . "index.php?page=My_profile&module=pesanan&action=list"; ?>">Pesanan</a>
+                    } ?> href="<?php echo BASE_URL . "index.php?page=My_profile&module=pesanan&action=list"; ?>" id="class_a">Pesanan</a>
             </li>
 
         </ul>

@@ -35,4 +35,5 @@ if (empty($nama_lengkap) || empty($email) || empty($phone) || empty($alamat) || 
 } else {
     mysqli_query($koneksi, "INSERT INTO user(level, nama, email, alamat, phone, password, status)
                             VALUES('$level','$nama_lengkap','$email', '$phone', '$alamat', '$password', '$status')");
+    header("location:" . BASE_URL . "index.php?page=login");
 }
