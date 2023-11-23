@@ -423,3 +423,19 @@ h3.label-data-pengiriman {
     padding: 10px 7px;
     margin: 0px;
 }
+
+.tombol-action {
+    background-color: #1e5474;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 12px;
+    float: right;
+    margin-right: 5px;
+}
+
+.tombol-action:hover {
+    background-color: orange;
+
+}

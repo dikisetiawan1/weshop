@@ -18,4 +18,25 @@ if ($button == "Konfirmasi") {
 
     $queryPembayaran = mysqli_query($koneksi, "INSERT INTO konfirmasi_pembayaran (pesanan_id, nomor_rekening, nama_account, tanggal_transfer)
     VALUES ('$pesanan_id', '$nomor_rekening','$nama_account','$tanggal_transfer')");
+
+    if ($queryPembayaran) {
+        mysqli_query($koneksi, "UPDATE pesanan SET status='1' WHERE pesanan_id='$pesanan_id'");
+    }
+} else if ($button == "Edit Status") {
+    $status = $_POST['status'];
+    $pesanan_id = $_POST['pesanan_id'];
+
+    mysqli_query($koneksi, "UPDATE pesanan SET status='$status' WHERE pesanan_id='$pesanan_id'");
+
+    if ($status == "2") {
+        $query = mysqli_query($koneksi, "SELECT * FROM pesanan_detail WHERE pesanan_id='$pesanan_id'");
+
+        while ($row = mysqli_fetch_assoc($query)) {
+            $barang_id = $row['barang_id'];
+            $quantity = $row['quantity'];
+
+            mysqli_query($koneksi, "UPDATE barang SET stok=stok-$quantity WHERE barang_id='$barang_id'");
+        }
+    }
 }
+header("location:" . BASE_URL . "index.php?page=My_profile&module=pesanan&action=list");

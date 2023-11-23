@@ -26,6 +26,8 @@ if (mysqli_num_rows($query) == 0) {
     $_SESSION['proses_pesanan'];
 
     if (isset($_SESSION['proses_pesanan'])) {
+
+        unset($_SESSION['proses_pesanan']);
         header("location:" . BASE_URL . "index.php?page=data_pemesan");
     } else {
 

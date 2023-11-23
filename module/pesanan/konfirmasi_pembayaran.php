@@ -4,7 +4,7 @@ $pesanan_id = $_GET['pesanan_id'];
 ?>
 
 <table class="table-list">
-    <form action="<?php echo BASE_URL . "module/pesanan/action.php?pesanan_id=$pesanan_id" ?>">
+    <form action="<?php echo BASE_URL . "module/pesanan/action.php?pesanan_id=$pesanan_id"; ?>" method="POST">
 
         <div class="element-form">
             <label for="">Nomor Rekening</label>

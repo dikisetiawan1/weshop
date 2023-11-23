@@ -15,7 +15,7 @@ $user_id = $_SESSION['user_id'];
 $waktu_saat_ini = date("Y-m-d H:i:s");
 
 $query = mysqli_query($koneksi, "INSERT INTO pesanan (nama_penerima, user_id, nomor_telepon, kota_id, alamat, tanggal_pemesanan, status)
- VALUES ('$nama_penerima','$user_id','$nomor_telepon','$kota','$alamat', '$waktu_saat_ini', 1)");
+ VALUES ('$nama_penerima','$user_id','$nomor_telepon','$kota','$alamat', '$waktu_saat_ini', 0)");
 
 
 if ($query) {

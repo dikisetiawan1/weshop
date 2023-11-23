@@ -25,7 +25,7 @@ $totalBarang = count($keranjang);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weshop</title>
 
-    <link rel="stylesheet" href="<?php echo BASE_URL . "css/style.css?v14"; ?>" type="text/css" />
+    <link rel="stylesheet" href="<?php echo BASE_URL . "css/style.css?v15"; ?>" type="text/css" />
     <link rel="stylesheet" href="<?php echo BASE_URL . "css/banner.css?v2"; ?>" type="text/css" />
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

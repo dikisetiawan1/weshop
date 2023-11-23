@@ -1,6 +1,11 @@
 <?php
 define("BASE_URL", "http://localhost/weshop/");
 
+$arrayStatusPesanan[0] = "Menunggu Pembayaran";
+$arrayStatusPesanan[1] = "Pembayaran Sedang di validasi";
+$arrayStatusPesanan[2] = "Lunas";
+$arrayStatusPesanan[3] = "Pembayaran ditoak";
+
 
 function rupiah($nilai = 0)
 {
